@@ -1,4 +1,5 @@
 #include <opencv2/opencv.hpp>
+#include <string>
 #include <filesystem>
 
 int main()
@@ -12,5 +13,6 @@ int main()
     cv::morphologyEx(image, destImg, cv::MORPH_CLOSE, kernel, cv::Point(-1,-1), 10);
 
     cv::imwrite(imagePath.stem().string() + "_close" + imagePath.extension().string(), destImg);
+    
     return 0;
 }
